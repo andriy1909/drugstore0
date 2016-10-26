@@ -1,6 +1,6 @@
 ﻿namespace Drugstore
 {
-    partial class Tovar
+    partial class Item
     {
         /// <summary>
         /// Обязательная переменная конструктора.

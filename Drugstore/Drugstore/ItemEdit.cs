@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Drugstore
 {
-    public partial class Autorizate : Form
+    public partial class ItemEdit : Form
     {
-        public Autorizate()
+        public ItemEdit()
         {
             InitializeComponent();
         }

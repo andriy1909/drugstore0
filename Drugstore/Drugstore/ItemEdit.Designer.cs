@@ -1,6 +1,6 @@
 ﻿namespace Drugstore
 {
-    partial class TovarEdit
+    partial class ItemEdit
     {
         /// <summary>
         /// Required designer variable.

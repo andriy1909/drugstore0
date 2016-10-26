@@ -49,11 +49,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Authorization.cs">
+    <Compile Include="Autorization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Authorization.Designer.cs">
-      <DependentUpon>Authorization.cs</DependentUpon>
+    <Compile Include="Autorization.Designer.cs">
+      <DependentUpon>Autorization.cs</DependentUpon>
     </Compile>
     <Compile Include="ClientEdit.cs">
       <SubType>Form</SubType>
@@ -75,42 +75,43 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tovar.cs">
+    <Compile Include="Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Tovar.Designer.cs">
-      <DependentUpon>Tovar.cs</DependentUpon>
+    <Compile Include="Item.Designer.cs">
+      <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="TovarEdit.cs">
+    <Compile Include="ItemEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TovarEdit.Designer.cs">
-      <DependentUpon>TovarEdit.cs</DependentUpon>
+    <Compile Include="ItemEdit.Designer.cs">
+      <DependentUpon>ItemEdit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tovars.cs">
+    <Compile Include="Items.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tovars.Designer.cs">
-      <DependentUpon>Tovars.cs</DependentUpon>
+    <Compile Include="Items.Designer.cs">
+      <DependentUpon>Items.cs</DependentUpon>
     </Compile>
-    <Compile Include="TovarSell.cs">
+    <Compile Include="ItemSell.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TovarSell.Designer.cs">
-      <DependentUpon>TovarSell.cs</DependentUpon>
+    <Compile Include="ItemSell.Designer.cs">
+      <DependentUpon>ItemSell.cs</DependentUpon>
     </Compile>
-    <Compile Include="TovarSmall.cs">
+    <Compile Include="ItemSmall.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="TovarSmall.Designer.cs">
-      <DependentUpon>TovarSmall.cs</DependentUpon>
+    <Compile Include="ItemSmall.Designer.cs">
+      <DependentUpon>ItemSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="TovarView.cs">
+    <Compile Include="ItemView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TovarView.Designer.cs">
-      <DependentUpon>TovarView.cs</DependentUpon>
+    <Compile Include="ItemView.Designer.cs">
+      <DependentUpon>ItemView.cs</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="WorkerEdit.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +124,12 @@
     <Compile Include="Workers.Designer.cs">
       <DependentUpon>Workers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Autorization.resx">
+      <DependentUpon>Autorization.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientEdit.resx">
+      <DependentUpon>ClientEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,6 +142,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WorkerEdit.resx">
+      <DependentUpon>WorkerEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
