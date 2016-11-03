@@ -35,6 +35,13 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вікнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.каскадомToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.горизонтальноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.вертикальноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.закритиВікноToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закритиВсіВікнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -42,6 +49,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingToolStripMenuItem,
+            this.вікнаToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -89,6 +97,59 @@
             this.exitToolStripMenuItem.Text = "Вихід";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // вікнаToolStripMenuItem
+            // 
+            this.вікнаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.каскадомToolStripMenuItem,
+            this.горизонтальноToolStripMenuItem,
+            this.вертикальноToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.закритиВікноToolStripMenuItem,
+            this.закритиВсіВікнаToolStripMenuItem});
+            this.вікнаToolStripMenuItem.Name = "вікнаToolStripMenuItem";
+            this.вікнаToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.вікнаToolStripMenuItem.Text = "Вікна";
+            // 
+            // каскадомToolStripMenuItem
+            // 
+            this.каскадомToolStripMenuItem.Name = "каскадомToolStripMenuItem";
+            this.каскадомToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.каскадомToolStripMenuItem.Text = "Каскадом";
+            this.каскадомToolStripMenuItem.Click += new System.EventHandler(this.каскадомToolStripMenuItem_Click);
+            // 
+            // горизонтальноToolStripMenuItem
+            // 
+            this.горизонтальноToolStripMenuItem.Name = "горизонтальноToolStripMenuItem";
+            this.горизонтальноToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.горизонтальноToolStripMenuItem.Text = "Горизонтально";
+            this.горизонтальноToolStripMenuItem.Click += new System.EventHandler(this.горизонтальноToolStripMenuItem_Click);
+            // 
+            // вертикальноToolStripMenuItem
+            // 
+            this.вертикальноToolStripMenuItem.Name = "вертикальноToolStripMenuItem";
+            this.вертикальноToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.вертикальноToolStripMenuItem.Text = "Вертикально";
+            this.вертикальноToolStripMenuItem.Click += new System.EventHandler(this.вертикальноToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(165, 6);
+            // 
+            // закритиВікноToolStripMenuItem
+            // 
+            this.закритиВікноToolStripMenuItem.Name = "закритиВікноToolStripMenuItem";
+            this.закритиВікноToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.закритиВікноToolStripMenuItem.Text = "Закрити вікно";
+            this.закритиВікноToolStripMenuItem.Click += new System.EventHandler(this.закритиВікноToolStripMenuItem_Click);
+            // 
+            // закритиВсіВікнаToolStripMenuItem
+            // 
+            this.закритиВсіВікнаToolStripMenuItem.Name = "закритиВсіВікнаToolStripMenuItem";
+            this.закритиВсіВікнаToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.закритиВсіВікнаToolStripMenuItem.Text = "Закрити всі вікна";
+            this.закритиВсіВікнаToolStripMenuItem.Click += new System.EventHandler(this.закритиВсіВікнаToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -119,5 +180,12 @@
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeUserToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вікнаToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem каскадомToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem горизонтальноToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem вертикальноToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem закритиВікноToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem закритиВсіВікнаToolStripMenuItem;
     }
 }

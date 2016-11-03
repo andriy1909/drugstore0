@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Drugstore</RootNamespace>
     <AssemblyName>Drugstore</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -49,23 +50,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Autorization.cs">
+    <Compile Include="AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Autorization.Designer.cs">
-      <DependentUpon>Autorization.cs</DependentUpon>
+    <Compile Include="AutorizationForm.Designer.cs">
+      <DependentUpon>AutorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientEdit.cs">
+    <Compile Include="Clients.cs" />
+    <Compile Include="ClientEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientEdit.Designer.cs">
-      <DependentUpon>ClientEdit.cs</DependentUpon>
+    <Compile Include="ClientEditForm.Designer.cs">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients.cs">
+    <Compile Include="ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clients.Designer.cs">
-      <DependentUpon>Clients.cs</DependentUpon>
+    <Compile Include="ClientsForm.Designer.cs">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -81,23 +83,23 @@
     <Compile Include="Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemEdit.cs">
+    <Compile Include="ItemEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemEdit.Designer.cs">
-      <DependentUpon>ItemEdit.cs</DependentUpon>
+    <Compile Include="ItemEditForm.Designer.cs">
+      <DependentUpon>ItemEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Items.cs">
+    <Compile Include="ItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Items.Designer.cs">
-      <DependentUpon>Items.cs</DependentUpon>
+    <Compile Include="ItemsForm.Designer.cs">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemSell.cs">
+    <Compile Include="ItemSellForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemSell.Designer.cs">
-      <DependentUpon>ItemSell.cs</DependentUpon>
+    <Compile Include="ItemSellForm.Designer.cs">
+      <DependentUpon>ItemSellForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemSmall.cs">
       <SubType>UserControl</SubType>
@@ -105,30 +107,30 @@
     <Compile Include="ItemSmall.Designer.cs">
       <DependentUpon>ItemSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemView.cs">
+    <Compile Include="ItemViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemView.Designer.cs">
-      <DependentUpon>ItemView.cs</DependentUpon>
+    <Compile Include="ItemViewForm.Designer.cs">
+      <DependentUpon>ItemViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="WorkerEdit.cs">
+    <Compile Include="WorkerEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerEdit.Designer.cs">
-      <DependentUpon>WorkerEdit.cs</DependentUpon>
+    <Compile Include="WorkerEditForm.Designer.cs">
+      <DependentUpon>WorkerEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Workers.cs">
+    <Compile Include="WorkersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Workers.Designer.cs">
-      <DependentUpon>Workers.cs</DependentUpon>
+    <Compile Include="WorkersForm.Designer.cs">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Autorization.resx">
-      <DependentUpon>Autorization.cs</DependentUpon>
+    <EmbeddedResource Include="AutorizationForm.resx">
+      <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientEdit.resx">
-      <DependentUpon>ClientEdit.cs</DependentUpon>
+    <EmbeddedResource Include="ClientEditForm.resx">
+      <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -141,9 +143,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WorkerEdit.resx">
-      <DependentUpon>WorkerEdit.cs</DependentUpon>
+    <EmbeddedResource Include="WorkerEditForm.resx">
+      <DependentUpon>WorkerEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -160,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apteka.ico" />
+    <None Include="Resourse\button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

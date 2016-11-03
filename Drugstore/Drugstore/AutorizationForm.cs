@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Drugstore
 {
-    public partial class Autorization : Form
+    public partial class AutorizationForm : Form
     {
-        public Autorization()
+        public AutorizationForm()
         {
             InitializeComponent();
         }
@@ -26,7 +26,7 @@ namespace Drugstore
 
             try
             {
-                SqlConnection bd = new SqlConnection(@"Data Source=.\BD; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;");
+                SqlConnection bd = new SqlConnection(@"Data Source=.\ANDRIY-PC; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;");
                 bd.Open();
                 string sql = "SELECT [login], [password], Posada.name as 'posada' " +
                             "FROM Workers INNER JOIN Posada " +

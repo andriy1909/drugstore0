@@ -1,6 +1,6 @@
 ﻿namespace Drugstore
 {
-    partial class Items
+    partial class ItemsForm
     {
         /// <summary>
         /// Required designer variable.

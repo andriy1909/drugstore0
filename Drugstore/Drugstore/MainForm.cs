@@ -23,7 +23,7 @@ namespace Drugstore
         //Увійти
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Autorization autorization = new Autorization();
+            AutorizationForm autorization = new AutorizationForm();
             autorization.TopLevel = false;
             autorization.MdiParent = this;
             autorization.Show();
@@ -31,7 +31,7 @@ namespace Drugstore
         //Вийти
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-                
+            
         }
         //Змінити користувача
         private void changeUserToolStripMenuItem_Click(object sender, EventArgs e)
@@ -44,5 +44,37 @@ namespace Drugstore
         {
             Application.Exit();
         }
+
+        //Вікна каскадом
+        private void каскадомToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.Cascade);
+        }
+        //Вікна горизонтально
+        private void горизонтальноToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileHorizontal);
+        }
+        //Вікна вертикально
+        private void вертикальноToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LayoutMdi(MdiLayout.TileVertical);
+        }
+        //Закрити вікно
+        private void закритиВікноToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiChildren.Length > 0)
+                ActiveMdiChild.Close();
+        }
+        //Закрити всі вікна
+        private void закритиВсіВікнаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MdiChildren.Length > 0)
+                foreach (Form form in MdiChildren)
+                {
+                    form.Close();
+                }
+        }
+
     }
 }
