@@ -50,90 +50,137 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutorizationForm.cs">
+    <Compile Include="Forms\AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AutorizationForm.Designer.cs">
+    <Compile Include="Forms\AutorizationForm.Designer.cs">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Clients.cs" />
-    <Compile Include="ClientEditForm.cs">
+    <Compile Include="Forms\CashierStarterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientEditForm.Designer.cs">
+    <Compile Include="Forms\CashierStarterForm.Designer.cs">
+      <DependentUpon>CashierStarterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Clients.cs" />
+    <Compile Include="Forms\ClientEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ClientEditForm.Designer.cs">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClientsForm.cs">
+    <Compile Include="Forms\ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ClientsForm.Designer.cs">
+    <Compile Include="Forms\ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\DirectorStarterForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\DirectorStarterForm.Designer.cs">
+      <DependentUpon>DirectorStarterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Items.cs" />
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagerStarterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerStarterForm.Designer.cs">
+      <DependentUpon>ManagerStarterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Item.cs">
+    <Compile Include="Components\Item.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Item.Designer.cs">
+    <Compile Include="Components\Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemEditForm.cs">
+    <Compile Include="Forms\ItemEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemEditForm.Designer.cs">
+    <Compile Include="Forms\ItemEditForm.Designer.cs">
       <DependentUpon>ItemEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemsForm.cs">
+    <Compile Include="Forms\ItemsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemsForm.Designer.cs">
+    <Compile Include="Forms\ItemsForm.Designer.cs">
       <DependentUpon>ItemsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemSellForm.cs">
+    <Compile Include="Forms\ItemSellForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemSellForm.Designer.cs">
+    <Compile Include="Forms\ItemSellForm.Designer.cs">
       <DependentUpon>ItemSellForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemSmall.cs">
+    <Compile Include="Components\ItemSmall.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ItemSmall.Designer.cs">
+    <Compile Include="Components\ItemSmall.Designer.cs">
       <DependentUpon>ItemSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemViewForm.cs">
+    <Compile Include="Forms\ItemViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemViewForm.Designer.cs">
+    <Compile Include="Forms\ItemViewForm.Designer.cs">
       <DependentUpon>ItemViewForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="WorkerEditForm.cs">
+    <Compile Include="Classes\User.cs" />
+    <Compile Include="Forms\WorkerEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkerEditForm.Designer.cs">
+    <Compile Include="Forms\WorkerEditForm.Designer.cs">
       <DependentUpon>WorkerEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="WorkersForm.cs">
+    <Compile Include="Classes\Workers.cs" />
+    <Compile Include="Forms\WorkersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WorkersForm.Designer.cs">
+    <Compile Include="Forms\WorkersForm.Designer.cs">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AutorizationForm.resx">
+    <EmbeddedResource Include="Forms\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ClientEditForm.resx">
+    <EmbeddedResource Include="Forms\CashierStarterForm.resx">
+      <DependentUpon>CashierStarterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ClientEditForm.resx">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\ClientsForm.resx">
+      <DependentUpon>ClientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DirectorStarterForm.resx">
+      <DependentUpon>DirectorStarterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Item.resx">
+      <DependentUpon>Item.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemEditForm.resx">
+      <DependentUpon>ItemEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemSellForm.resx">
+      <DependentUpon>ItemSellForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ItemsForm.resx">
+      <DependentUpon>ItemsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\ItemSmall.resx">
+      <DependentUpon>ItemSmall.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerStarterForm.resx">
+      <DependentUpon>ManagerStarterForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -145,8 +192,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="WorkerEditForm.resx">
+    <EmbeddedResource Include="Forms\WorkerEditForm.resx">
       <DependentUpon>WorkerEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WorkersForm.resx">
+      <DependentUpon>WorkersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
