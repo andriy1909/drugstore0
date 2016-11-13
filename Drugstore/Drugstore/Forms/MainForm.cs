@@ -20,6 +20,36 @@ namespace Drugstore
             user = new User();
         }
 
+        public void openStartForm()
+        {
+            switch (user.access)
+            {
+                case 1:
+                    DirectorStarterForm dform = new DirectorStarterForm();
+                    dform.TopLevel = false;
+                    dform.MdiParent = this;
+                    dform.Show();
+                    miContrDir.Visible = true;
+                    break;
+                case 2:
+                    ManagerStarterForm mform = new ManagerStarterForm();
+                    mform.TopLevel = false;
+                    mform.MdiParent = this;
+                    mform.Show();
+                    miContrMan.Visible = true;
+                    break;
+                case 3:
+                    CashierStarterForm cform = new CashierStarterForm();
+                    cform.TopLevel = false;
+                    cform.MdiParent = this;
+                    cform.Show();
+                    miContrCas.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         //Увійти
         private void loginToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -27,16 +57,33 @@ namespace Drugstore
             autorization.TopLevel = false;
             autorization.MdiParent = this;
             autorization.Show();
+            openStartForm();
+        }
+        public void logout()
+        {
+            miLogin.Visible = true;
+            miSetting.DropDownItems[0].Visible = false;
+            miSetting.DropDownItems[1].Visible = false;
+            closeAllWondows();
+            user = new User();
+            miContrCas.Visible = false;
+            miContrDir.Visible = false;
+            miContrMan.Visible = false;
         }
         //Вийти
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            logout();
         }
         //Змінити користувача
         private void changeUserToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            logout();
 
+            AutorizationForm autorization = new AutorizationForm();
+            autorization.TopLevel = false;
+            autorization.MdiParent = this;
+            autorization.Show();
         }
 
         //Вихід з програми
@@ -68,6 +115,10 @@ namespace Drugstore
         }
         //Закрити всі вікна
         private void закритиВсіВікнаToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            closeAllWondows();
+        }
+        public void closeAllWondows()
         {
             if (MdiChildren.Length > 0)
                 foreach (Form form in MdiChildren)

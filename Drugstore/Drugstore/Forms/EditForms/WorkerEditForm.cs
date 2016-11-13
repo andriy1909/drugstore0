@@ -19,7 +19,7 @@ namespace Drugstore
         {
             InitializeComponent();
             action = "add";
-            Text = "Додавання нового клієнта";
+            Text = "Додавання нового робітника";
             btnAddEdit.Text = "Додати";
         }
         public WorkerEditForm(int id)

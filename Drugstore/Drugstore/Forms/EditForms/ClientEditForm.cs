@@ -34,14 +34,19 @@ namespace Drugstore
         }
         private void add()
         {
-            Clients clients = new Clients(tbSurname.Text, tbName.Text, tbLastname.Text, maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, checkBoxEmail.Checked, dateBirth.Value, dateRegistr.Value, radioButtonMan.Checked);
+            Clients clients = new Clients();
+            clients.setClient(tbCard.Text, tbSurname.Text, tbName.Text, tbLastname.Text, maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, checkBoxEmail.Checked, dateBirth.Value, dateRegistr.Value, radioButtonMan.Checked);
             clients.insertClient();
-            MessageBox.Show("Додано клієнта!");
+            MessageBox.Show("Додано клієнта!", "", MessageBoxButtons.OK);
+            Close();
         }
         private void edit()
         {
-            Clients clients = new Clients(tbSurname.Text, tbName.Text, tbLastname.Text, maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, checkBoxEmail.Checked, dateBirth.Value, dateRegistr.Value, radioButtonMan.Checked);
+            Clients clients = new Clients();
+            clients.setClient(tbCard.Text, tbSurname.Text, tbName.Text, tbLastname.Text, maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, checkBoxEmail.Checked, dateBirth.Value, dateRegistr.Value, radioButtonMan.Checked);
             clients.updateClient(id);
+            MessageBox.Show("Клієнта змінено!", "", MessageBoxButtons.OK);
+            Close();
         }
 
         private void btnAddEdit_Click(object sender, EventArgs e)
@@ -65,7 +70,8 @@ namespace Drugstore
         private void getClientData(int id)
         {
             Clients client = new Clients();
-            client.getClientId(id);
+            client.getDataClient(id);
+            tbCard.Text = client.getCard();
             tbSurname.Text = client.getSurname();
             tbName.Text = client.getName();
             tbLastname.Text = client.getLastname();
@@ -74,7 +80,18 @@ namespace Drugstore
             checkBoxEmail.Checked = client.getCheckEmail();
             dateBirth.Value = client.getDateBirth();
             dateRegistr.Value = client.getDateRegistr();
-            radioButtonMan.Checked = client.getGender();
+            if (client.getGender())
+                radioButtonMan.Checked = true;
+            else
+                radioButtonWoman.Checked = true;
+        }
+
+        private void tbEmail_TextChanged(object sender, EventArgs e)
+        {
+            if (tbEmail.TextLength > 0)
+                checkBoxEmail.Enabled = true;
+            else
+                checkBoxEmail.Enabled = false;
         }
     }
 }

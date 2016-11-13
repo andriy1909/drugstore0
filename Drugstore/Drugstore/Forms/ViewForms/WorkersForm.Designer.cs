@@ -36,6 +36,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             // btnSort
             // 
             this.btnSort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSort.BackColor = System.Drawing.Color.Transparent;
+            this.btnSort.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnSort.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSort.BackgroundImage")));
             this.btnSort.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSort.FlatAppearance.BorderSize = 0;
@@ -68,7 +69,7 @@
             // btnFiltr
             // 
             this.btnFiltr.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFiltr.BackColor = System.Drawing.Color.Transparent;
+            this.btnFiltr.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnFiltr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnFiltr.BackgroundImage")));
             this.btnFiltr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnFiltr.FlatAppearance.BorderSize = 0;
@@ -84,7 +85,7 @@
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.Transparent;
+            this.btnEdit.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEdit.FlatAppearance.BorderSize = 0;
@@ -97,10 +98,11 @@
             this.btnEdit.TabIndex = 17;
             this.btnEdit.Text = "Змінити";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.Transparent;
+            this.btnDelete.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnDelete.FlatAppearance.BorderSize = 0;
@@ -113,10 +115,11 @@
             this.btnDelete.TabIndex = 16;
             this.btnDelete.Text = "Видалити";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.BackColor = System.Drawing.Color.CornflowerBlue;
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.FlatAppearance.BorderSize = 0;
@@ -129,6 +132,7 @@
             this.btnAdd.TabIndex = 15;
             this.btnAdd.Text = "Додати";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dataGridView1
             // 
@@ -146,6 +150,23 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(680, 387);
             this.dataGridView1.TabIndex = 14;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUpdate.BackgroundImage")));
+            this.btnUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnUpdate.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUpdate.Location = new System.Drawing.Point(7, 405);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(83, 23);
+            this.btnUpdate.TabIndex = 21;
+            this.btnUpdate.Text = "Оновити";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // WorkersForm
             // 
@@ -153,6 +174,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(782, 440);
+            this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSort);
             this.Controls.Add(this.btnFiltr);
@@ -163,6 +185,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WorkersForm";
             this.Text = "Працівники";
+            this.Load += new System.EventHandler(this.WorkersForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -177,5 +200,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnUpdate;
     }
 }

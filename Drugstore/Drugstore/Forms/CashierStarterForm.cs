@@ -16,28 +16,22 @@ namespace Drugstore
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnViewItem_Click(object sender, EventArgs e)
         {
             ItemsForm form = new ItemsForm();
             form.TopLevel = false;
             form.MdiParent = (MainForm)Parent.Parent;
             form.Show();
+            Close();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnSell_Click(object sender, EventArgs e)
         {
             ItemSellForm form = new ItemSellForm();
             form.TopLevel = false;
             form.MdiParent = (MainForm)Parent.Parent;
             form.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            ClientsForm form = new ClientsForm();
-            form.TopLevel = false;
-            form.MdiParent = (MainForm)Parent.Parent;
-            form.Show();
+            Close();
         }
     }
 }

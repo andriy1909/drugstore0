@@ -32,6 +32,7 @@ namespace Drugstore
             ClientEditForm addClientForm = new ClientEditForm();
             addClientForm.TopLevel = false;
             addClientForm.MdiParent = (MainForm)Parent.Parent;
+            addClientForm.FormClosing += AddEditClientForm_FormClosing;
             addClientForm.Show();
         }
 
@@ -43,19 +44,30 @@ namespace Drugstore
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int index = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            ClientEditForm addClientForm = new ClientEditForm(index);
-            addClientForm.TopLevel = false;
-            addClientForm.MdiParent = (MainForm)Parent.Parent;
-            addClientForm.Show();
+            ClientEditForm editClientForm = new ClientEditForm(index);
+            editClientForm.TopLevel = false;
+            editClientForm.MdiParent = (MainForm)Parent.Parent;
+            editClientForm.FormClosing += AddEditClientForm_FormClosing;
+            editClientForm.Show();
+        }
 
+        private void AddEditClientForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
             update();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DialogResult = MessageBox.Show("Видалити запис?", "Видалення", MessageBoxButtons.YesNo);
-            if(DialogResult==DialogResult.Yes) 
+            if (DialogResult == DialogResult.Yes)
+            {
                 Clients.deleteId(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                update();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
             update();
         }
     }

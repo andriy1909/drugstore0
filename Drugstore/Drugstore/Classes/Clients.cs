@@ -7,147 +7,80 @@ using System.Data;
 
 namespace Drugstore
 {
-    public class Clients
+    public class Clients : Person
     {
-        int id;
-        string surname;
-        string name;
-        string lastname;
-        string phone;
-        string email;
+        string card;
         bool checkEmail;
-        DateTime dateBirth;
         DateTime dateRegistr;
-        bool gender; //true-man | false-woman
         string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
 
         public Clients()
         {
 
         }
-        public Clients(string surname, string name, string lastname,string phone, string email, bool checkEmail, DateTime dateBirth, DateTime dateRegistr, bool gender)
+        public void setClient(string card, string surname, string name, string lastname,string phone, string email, bool checkEmail, DateTime dateBirth, DateTime dateRegistr, bool gender)
         {
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = phone;
-            this.email = email;
-            this.checkEmail = checkEmail;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
-        }
-        /*public Clients(string surname, string name, string lastname, string phone, DateTime dateBirth, DateTime dateRegistr, bool gender)
-        {
-            this.id = id;
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = phone;
-            this.email = "";
-            this.checkEmail = false;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
-        }
-        public Clients(string surname, string name, string lastname, string phone, string email, bool checkEmail, DateTime dateBirth, DateTime dateRegistr, bool gender)
-        {
-            this.id = id;
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = phone;
-            this.email = email;
-            this.checkEmail = checkEmail;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
+            setCard(card);
+            setSurname(surname);
+            setName(name);
+            setLastname(lastname);
+            setPhone(phone);
+            setEmail(email);
+            setCheckEmail(checkEmail);
+            setDateBirth(dateBirth);
+            setDateRegistr(dateRegistr);
+            setGender(gender);
         }
 
-        public void setClient(string surname, string name, string lastname, string email, bool checkEmail, DateTime dateBirth, DateTime dateRegistr, bool gender)
+        public string getCard()
         {
-            this.id = id;
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = "";
-            this.email = email;
-            this.checkEmail = checkEmail;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
+            return card;
         }
-        public void setClient(string surname, string name, string lastname, string phone, DateTime dateBirth, DateTime dateRegistr, bool gender)
-        {
-            this.id = id;
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = phone;
-            this.email = "";
-            this.checkEmail = false;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
-        }
-        public void setClient(string surname, string name, string lastname, string phone, string email, bool checkEmail, DateTime dateBirth, DateTime dateRegistr, bool gender)
-        {
-            this.id = id;
-            this.surname = surname;
-            this.name = name;
-            this.lastname = lastname;
-            this.phone = phone;
-            this.email = email;
-            this.checkEmail = checkEmail;
-            this.dateBirth = dateBirth;
-            this.dateRegistr = dateRegistr;
-            this.gender = gender;
-        }
-        */
-        public int getId()
-        {
-            return id;
-        }
-        public string getSurname()
-        {
-            return surname;
-        }
-        public string getName()
-        {
-            return name;
-        }
-        public string getLastname()
-        {
-            return lastname;
-        }
-        public string getPhone()
-        {
-            return phone;
-        }
-        public string getEmail()
-        {
-            return email;
-        }
+
         public bool getCheckEmail()
         {
             return checkEmail;
         }
-        public DateTime getDateBirth()
-        {
-            return dateBirth;
-        }
+        
         public DateTime getDateRegistr()
         {
             return dateRegistr;
-        }
-        public bool getGender()
+        }        
+
+        public void setCard(string card)
         {
-            return gender;
+            this.card = card;
+        }
+        public void setCheckEmail(bool check)
+        {
+            checkEmail = check;
+        }
+        public void setDateRegistr(DateTime date)
+        {
+            dateRegistr = date;
         }
 
         public void getDataClient(int id)
         {
-
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Clients WHERE id=" + id.ToString(), bd);
+            SqlDataReader dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                setId(id);
+                setCard(dataReader1["card"].ToString().Trim());
+                setSurname(dataReader1["surname"].ToString().Trim());
+                setName(dataReader1["name"].ToString().Trim());
+                setLastname(dataReader1["lastname"].ToString().Trim());
+                setPhone(dataReader1["phone"].ToString().Trim());
+                setEmail(dataReader1["email"].ToString().Trim());
+                setCheckEmail((bool)dataReader1["rozsilka"]);
+                setDateBirth((DateTime)dataReader1["dateBirth"]);
+                setDateRegistr((DateTime)dataReader1["dateRegistr"]);
+                setGender((bool)dataReader1["gender"]);
+            }
+            bd.Close();
         }
 
         public void insertClient()
@@ -155,18 +88,18 @@ namespace Drugstore
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
-                    "INSERT INTO Clients VALUES(@valueName, @valueSurname, @valueLastname, @valuePhone, @valueEmail, " +
+                    "INSERT INTO Clients VALUES(@valueCard, @valueSurname, @valuename, @valueLastname, @valuePhone, @valueEmail, " +
                     "@valueCheckEmail, @valueDateBirth, @valueDateRegistr, @valueGender)", connection);
-                command.Parameters.AddWithValue("@valueName", name);
-                command.Parameters.AddWithValue("@valueSurname", surname);
-                command.Parameters.AddWithValue("@valueLastname", lastname);
-                command.Parameters.AddWithValue("@valuePhone", phone);
-                command.Parameters.AddWithValue("@valueEmail", email);
-                command.Parameters.AddWithValue("@valueCheckEmail", checkEmail);
-                command.Parameters.AddWithValue("@valueDateBirth", dateBirth.Date.ToString());
-                command.Parameters.AddWithValue("@valueDateRegistr", dateRegistr.Date.ToString());
-                //command.Parameters.AddWithValue("@valueGender", (gender) ? 1 : 0);
-                command.Parameters.AddWithValue("@valueGender", gender);
+                command.Parameters.AddWithValue("@valueCard", getCard());
+                command.Parameters.AddWithValue("@valueSurname", getSurname());
+                command.Parameters.AddWithValue("@valueName", getName());
+                command.Parameters.AddWithValue("@valueLastname", getLastname());
+                command.Parameters.AddWithValue("@valuePhone", getPhone());
+                command.Parameters.AddWithValue("@valueEmail", getEmail());
+                command.Parameters.AddWithValue("@valueCheckEmail", getCheckEmail());
+                command.Parameters.AddWithValue("@valueDateBirth", getDateBirth().Date.ToString());
+                command.Parameters.AddWithValue("@valueDateRegistr", getDateRegistr().Date.ToString());
+                command.Parameters.AddWithValue("@valueGender", getGender());
 
                 command.Connection.Open();
                 command.ExecuteNonQuery();
@@ -178,18 +111,19 @@ namespace Drugstore
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Clients SET name=@valueName, surname=@valueSurname, lastname=@valueLastname, phone=@valuePhone, email=@valueEmail, " +
-                    "rozsilka=@valueCheckEmail, dateBirth=@valueDateBirth, dateRegistr=@valueDateRegistr, stat=@valueGender "+
+                    "UPDATE Clients SET card=@valueCard, name=@valueName, surname=@valueSurname, lastname=@valueLastname, phone=@valuePhone, email=@valueEmail, " +
+                    "rozsilka=@valueCheckEmail, dateBirth=@valueDateBirth, dateRegistr=@valueDateRegistr, gender=@valueGender "+
                     "WHERE id="+id.ToString(), connection);
-                command.Parameters.AddWithValue("@valueName", name);
-                command.Parameters.AddWithValue("@valueSurname", surname);
-                command.Parameters.AddWithValue("@valueLastname", lastname);
-                command.Parameters.AddWithValue("@valuePhone", phone);
-                command.Parameters.AddWithValue("@valueEmail", email);
-                command.Parameters.AddWithValue("@valueCheckEmail", (checkEmail) ? 1 : 0);
-                command.Parameters.AddWithValue("@valueDateBirth", dateBirth.Date.ToString());
-                command.Parameters.AddWithValue("@valueDateRegistr", dateRegistr.Date.ToString());
-                command.Parameters.AddWithValue("@valueGender", (gender) ? 1 : 0);
+                command.Parameters.AddWithValue("@valueCard", getCard());
+                command.Parameters.AddWithValue("@valueSurname", getSurname());
+                command.Parameters.AddWithValue("@valueName", getName());
+                command.Parameters.AddWithValue("@valueLastname", getLastname());
+                command.Parameters.AddWithValue("@valuePhone", getPhone());
+                command.Parameters.AddWithValue("@valueEmail", getEmail());
+                command.Parameters.AddWithValue("@valueCheckEmail", getCheckEmail());
+                command.Parameters.AddWithValue("@valueDateBirth", getDateBirth().Date.ToString());
+                command.Parameters.AddWithValue("@valueDateRegistr", getDateRegistr().Date.ToString());
+                command.Parameters.AddWithValue("@valueGender", getGender());
 
                 command.Connection.Open();
                 command.ExecuteNonQuery();
@@ -220,29 +154,6 @@ namespace Drugstore
             dataAdapter1.Fill(dataSet);
             bd.Close();
             return dataSet;
-        }
-
-        public void getClientId(int id)
-        {
-            string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
-            SqlConnection bd = new SqlConnection(connectString);
-            bd.Open();
-            SqlCommand command1 = new SqlCommand("SELECT * FROM Clients WHERE id=" + id.ToString(), bd);
-            SqlDataReader dataReader1 = command1.ExecuteReader();
-
-            this.id = id;
-            //this.id = int.Parse(dataReader1["id"].ToString().Trim());
-            surname = dataReader1["surname"].ToString().Trim();
-            name = dataReader1["name"].ToString().Trim();
-            lastname = dataReader1["lastname"].ToString().Trim();
-            phone = dataReader1["phone"].ToString().Trim();
-            email = dataReader1["email"].ToString().Trim();
-            checkEmail = (bool)dataReader1["rozsilka"];
-            dateBirth = (DateTime)dataReader1["dateBirth"];
-            dateRegistr = (DateTime)dataReader1["dateRegistr"];
-            gender = (bool)dataReader1["stat"];
-
-            bd.Close();
         }
     }
 }

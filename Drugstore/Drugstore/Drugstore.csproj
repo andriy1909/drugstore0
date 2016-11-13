@@ -50,6 +50,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Checks.cs" />
+    <Compile Include="Classes\Person.cs" />
     <Compile Include="Forms\AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,16 +65,16 @@
       <DependentUpon>CashierStarterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Clients.cs" />
-    <Compile Include="Forms\ClientEditForm.cs">
+    <Compile Include="Forms\EditForms\ClientEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ClientEditForm.Designer.cs">
+    <Compile Include="Forms\EditForms\ClientEditForm.Designer.cs">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ClientsForm.cs">
+    <Compile Include="Forms\ViewForms\ClientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ClientsForm.Designer.cs">
+    <Compile Include="Forms\ViewForms\ClientsForm.Designer.cs">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DirectorStarterForm.cs">
@@ -102,10 +104,10 @@
     <Compile Include="Components\Item.Designer.cs">
       <DependentUpon>Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ItemEditForm.cs">
+    <Compile Include="Forms\EditForms\ItemEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ItemEditForm.Designer.cs">
+    <Compile Include="Forms\EditForms\ItemEditForm.Designer.cs">
       <DependentUpon>ItemEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ItemsForm.cs">
@@ -126,24 +128,24 @@
     <Compile Include="Components\ItemSmall.Designer.cs">
       <DependentUpon>ItemSmall.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ItemViewForm.cs">
+    <Compile Include="Forms\ViewForms\ItemViewForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ItemViewForm.Designer.cs">
+    <Compile Include="Forms\ViewForms\ItemViewForm.Designer.cs">
       <DependentUpon>ItemViewForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\User.cs" />
-    <Compile Include="Forms\WorkerEditForm.cs">
+    <Compile Include="Forms\EditForms\WorkerEditForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkerEditForm.Designer.cs">
+    <Compile Include="Forms\EditForms\WorkerEditForm.Designer.cs">
       <DependentUpon>WorkerEditForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Workers.cs" />
-    <Compile Include="Forms\WorkersForm.cs">
+    <Compile Include="Forms\ViewForms\WorkersForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\WorkersForm.Designer.cs">
+    <Compile Include="Forms\ViewForms\WorkersForm.Designer.cs">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\AutorizationForm.resx">
@@ -152,10 +154,10 @@
     <EmbeddedResource Include="Forms\CashierStarterForm.resx">
       <DependentUpon>CashierStarterForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClientEditForm.resx">
+    <EmbeddedResource Include="Forms\EditForms\ClientEditForm.resx">
       <DependentUpon>ClientEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ClientsForm.resx">
+    <EmbeddedResource Include="Forms\ViewForms\ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DirectorStarterForm.resx">
@@ -164,7 +166,7 @@
     <EmbeddedResource Include="Components\Item.resx">
       <DependentUpon>Item.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ItemEditForm.resx">
+    <EmbeddedResource Include="Forms\EditForms\ItemEditForm.resx">
       <DependentUpon>ItemEditForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ItemSellForm.resx">
@@ -184,24 +186,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Forms\WorkerEditForm.resx">
+    <EmbeddedResource Include="Forms\EditForms\WorkerEditForm.resx">
       <DependentUpon>WorkerEditForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\WorkersForm.resx">
+    <EmbeddedResource Include="Forms\ViewForms\WorkersForm.resx">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -213,8 +215,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="apteka.ico" />
+    <None Include="Resourse\StartImage.jpg" />
     <None Include="Resourse\button.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

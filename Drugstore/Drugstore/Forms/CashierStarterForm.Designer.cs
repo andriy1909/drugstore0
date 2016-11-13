@@ -29,51 +29,59 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CashierStarterForm));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnViewItem = new System.Windows.Forms.Button();
+            this.btnSell = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnViewItem
             // 
-            this.button1.Location = new System.Drawing.Point(91, 181);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 50);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Переглянути список товарів";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnViewItem.BackColor = System.Drawing.Color.Transparent;
+            this.btnViewItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewItem.BackgroundImage")));
+            this.btnViewItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewItem.FlatAppearance.BorderSize = 0;
+            this.btnViewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnViewItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnViewItem.Location = new System.Drawing.Point(12, 293);
+            this.btnViewItem.Name = "btnViewItem";
+            this.btnViewItem.Size = new System.Drawing.Size(160, 50);
+            this.btnViewItem.TabIndex = 1;
+            this.btnViewItem.Text = "Переглянути список товарів";
+            this.btnViewItem.UseVisualStyleBackColor = false;
+            this.btnViewItem.Click += new System.EventHandler(this.btnViewItem_Click);
             // 
-            // button2
+            // btnSell
             // 
-            this.button2.Location = new System.Drawing.Point(311, 181);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 50);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Продажа товарів";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(189, 259);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 50);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Клієнти";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnSell.BackColor = System.Drawing.Color.Transparent;
+            this.btnSell.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSell.BackgroundImage")));
+            this.btnSell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSell.FlatAppearance.BorderSize = 0;
+            this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnSell.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnSell.Location = new System.Drawing.Point(12, 349);
+            this.btnSell.Name = "btnSell";
+            this.btnSell.Size = new System.Drawing.Size(160, 50);
+            this.btnSell.TabIndex = 2;
+            this.btnSell.Text = "Продаж товарів";
+            this.btnSell.UseVisualStyleBackColor = false;
+            this.btnSell.Click += new System.EventHandler(this.btnSell_Click);
             // 
             // CashierStarterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 412);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackgroundImage = global::Drugstore.Properties.Resources.StartImage;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(584, 411);
+            this.Controls.Add(this.btnSell);
+            this.Controls.Add(this.btnViewItem);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CashierStarterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Стартова сторінка";
             this.ResumeLayout(false);
 
@@ -81,8 +89,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnViewItem;
+        private System.Windows.Forms.Button btnSell;
     }
 }
