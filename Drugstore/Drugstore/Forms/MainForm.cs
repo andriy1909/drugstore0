@@ -57,7 +57,6 @@ namespace Drugstore
             autorization.TopLevel = false;
             autorization.MdiParent = this;
             autorization.Show();
-            openStartForm();
         }
         public void logout()
         {

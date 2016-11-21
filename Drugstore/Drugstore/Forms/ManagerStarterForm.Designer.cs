@@ -38,7 +38,11 @@
             this.btnClients.BackColor = System.Drawing.Color.Transparent;
             this.btnClients.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnClients.BackgroundImage")));
             this.btnClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClients.FlatAppearance.BorderSize = 0;
+            this.btnClients.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnClients.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnClients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -55,7 +59,11 @@
             this.btnItems.BackColor = System.Drawing.Color.Transparent;
             this.btnItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnItems.BackgroundImage")));
             this.btnItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnItems.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnItems.FlatAppearance.BorderSize = 0;
+            this.btnItems.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnItems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnItems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnItems.ForeColor = System.Drawing.SystemColors.ControlLightLight;

@@ -43,10 +43,10 @@ namespace Drugstore
                                 lbErrors.Visible = false;
 
                                 user = new User(int.Parse(dataReader1["id"].ToString()),
-                                dataReader1["name"].ToString().Trim(),
-                                dataReader1["surname"].ToString().Trim(),
-                                dataReader1["lastname"].ToString().Trim(),
-                                dataReader1["posada"].ToString().Trim());
+                                    dataReader1["surname"].ToString().Trim(),
+                                    dataReader1["name"].ToString().Trim(),
+                                    dataReader1["lastname"].ToString().Trim(),
+                                    dataReader1["posada"].ToString().Trim());
                                 mainForm.user = user;
                                 break;
                             }
@@ -62,6 +62,7 @@ namespace Drugstore
                 {
                     Hide();
                     MessageBox.Show("Ласкаво просимо, " + user.getUserName() + "!", "Здійснено вхід", MessageBoxButtons.OK);
+                    mainForm.openStartForm();
                     mainForm.miLogin.Visible = false;
                     mainForm.miSetting.DropDownItems[0].Visible = true;
                     mainForm.miSetting.DropDownItems[1].Visible = true;

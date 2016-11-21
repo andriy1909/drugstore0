@@ -34,7 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbPasport = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -106,13 +106,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Телефон";
             // 
-            // textBox1
+            // tbPasport
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(166, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(154, 22);
-            this.textBox1.TabIndex = 5;
+            this.tbPasport.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPasport.Location = new System.Drawing.Point(166, 20);
+            this.tbPasport.Name = "tbPasport";
+            this.tbPasport.Size = new System.Drawing.Size(154, 22);
+            this.tbPasport.TabIndex = 5;
             // 
             // label6
             // 
@@ -221,9 +221,9 @@
             this.radioButtonWoman.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButtonWoman.Location = new System.Drawing.Point(185, 296);
             this.radioButtonWoman.Name = "radioButtonWoman";
-            this.radioButtonWoman.Size = new System.Drawing.Size(74, 20);
+            this.radioButtonWoman.Size = new System.Drawing.Size(65, 20);
             this.radioButtonWoman.TabIndex = 52;
-            this.radioButtonWoman.Text = "Жіноча";
+            this.radioButtonWoman.Text = "Жінка";
             this.radioButtonWoman.UseVisualStyleBackColor = true;
             // 
             // radioButtonMan
@@ -233,16 +233,17 @@
             this.radioButtonMan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.radioButtonMan.Location = new System.Drawing.Point(185, 279);
             this.radioButtonMan.Name = "radioButtonMan";
-            this.radioButtonMan.Size = new System.Drawing.Size(93, 20);
+            this.radioButtonMan.Size = new System.Drawing.Size(84, 20);
             this.radioButtonMan.TabIndex = 51;
             this.radioButtonMan.TabStop = true;
-            this.radioButtonMan.Text = "Чтоловіча";
+            this.radioButtonMan.Text = "Чтоловік";
             this.radioButtonMan.UseVisualStyleBackColor = true;
             // 
             // btnAddEdit
             // 
             this.btnAddEdit.BackgroundImage = global::Drugstore.Properties.Resources.button;
             this.btnAddEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddEdit.FlatAppearance.BorderSize = 0;
             this.btnAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -296,7 +297,7 @@
             this.tbSurname.Size = new System.Drawing.Size(154, 22);
             this.tbSurname.TabIndex = 54;
             // 
-            // WorkerEdit
+            // WorkerEditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -321,14 +322,14 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbPasport);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "WorkerEdit";
+            this.Name = "WorkerEditForm";
             this.Text = "WorkersEdit";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -342,7 +343,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbPasport;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;

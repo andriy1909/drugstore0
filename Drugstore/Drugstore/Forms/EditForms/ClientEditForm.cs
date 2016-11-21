@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Drugstore
@@ -22,6 +14,8 @@ namespace Drugstore
             action = "add";
             Text = "Додавання нового клієнта";
             btnAddEdit.Text = "Додати";
+            dateBirth.MaxDate = DateTime.Now;
+            dateRegistr.MaxDate = DateTime.Now;
         }
         public ClientEditForm(int id)
         {
@@ -30,7 +24,9 @@ namespace Drugstore
             action = "edit";
             Text = "Редагування";
             btnAddEdit.Text = "Редагувати";
-            getClientData(id);  
+            getClientData(id);
+            dateBirth.MaxDate = DateTime.Now;
+            dateRegistr.MaxDate = DateTime.Now;
         }
         private void add()
         {

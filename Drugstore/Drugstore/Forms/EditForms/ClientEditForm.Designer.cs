@@ -221,6 +221,7 @@
             // 
             this.btnAddEdit.BackgroundImage = global::Drugstore.Properties.Resources.button;
             this.btnAddEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddEdit.FlatAppearance.BorderSize = 0;
             this.btnAddEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));

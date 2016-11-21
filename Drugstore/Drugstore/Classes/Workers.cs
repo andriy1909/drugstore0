@@ -139,13 +139,14 @@ namespace Drugstore
             }
         }
 
-        public void updateWorker()
+        public void updateWorker(int id)
         {
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
                     "UPDATE Workers SET pasport=@valuePasport, name=@valueName, surname=@valueSurname, lastname=@valueLastname, phone=@valuePhone, email=@valueEmail, " +
-                    " posada=@valuePosada, dateBirth=@valueDateBirth, stage=@valueStage, datePriyom=@valueDatePriyom, stat=@valueGender, login=@valueLogin, password=@valuePassword", connection);
+                    " posada=@valuePosada, dateBirth=@valueDateBirth, stage=@valueStage, datePriyom=@valueDatePriyom, stat=@valueGender, login=@valueLogin, password=@valuePassword"+
+                    " WHERE id="+id.ToString(), connection);
 
                 command.Parameters.AddWithValue("@valuePasport", getPasport());
                 command.Parameters.AddWithValue("@valueName", getName());
@@ -180,7 +181,7 @@ namespace Drugstore
             }
         }
 
-        public static DataSet getAllClients()
+        public static DataSet getAllWorkers()
         {
             DataSet dataSet = new DataSet();
             string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
@@ -197,7 +198,8 @@ namespace Drugstore
             string name="";
             SqlConnection bd = new SqlConnection(connectString);
             bd.Open();
-            SqlCommand command1 = new SqlCommand("SELECT * FROM Posada WHERE id=" + id.ToString(), bd);
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Posada WHERE id=@value", bd);
+            command1.Parameters.AddWithValue("@value", id.ToString());
             SqlDataReader dataReader1 = command1.ExecuteReader();
             while (dataReader1.Read())
             {
@@ -205,6 +207,53 @@ namespace Drugstore
             }
             bd.Close();
             return name;
+        }
+
+        public string getNamePosada()
+        {
+            string name = "";
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Posada WHERE id=" + getId().ToString(), bd);
+            SqlDataReader dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                name = dataReader1["name"].ToString().Trim();
+            }
+            bd.Close();
+            return name;
+        }
+
+        public int getPosadaId(string name)
+        {
+            int id = 0;
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Posada WHERE name=@value", bd);
+            command1.Parameters.AddWithValue("@value", name);
+            SqlDataReader dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                id = (int)dataReader1["id"];
+            }
+            bd.Close();
+            return id;
+        }
+
+        public static List<string> getAllPosada()
+        {
+            string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
+            List<string> pos=new List<string>();
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Posada", bd);
+            SqlDataReader dataReader1 = command1.ExecuteReader();
+            while (dataReader1.Read())
+            {
+                pos.Add(dataReader1["name"].ToString().Trim());
+            }
+            bd.Close();
+            return pos;
         }
     }
 }

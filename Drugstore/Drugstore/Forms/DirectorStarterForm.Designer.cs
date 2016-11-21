@@ -39,7 +39,11 @@
             this.btnContItems.BackColor = System.Drawing.Color.Transparent;
             this.btnContItems.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContItems.BackgroundImage")));
             this.btnContItems.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContItems.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContItems.FlatAppearance.BorderSize = 0;
+            this.btnContItems.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnContItems.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContItems.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnContItems.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContItems.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnContItems.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -56,7 +60,11 @@
             this.btnContClients.BackColor = System.Drawing.Color.Transparent;
             this.btnContClients.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContClients.BackgroundImage")));
             this.btnContClients.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContClients.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContClients.FlatAppearance.BorderSize = 0;
+            this.btnContClients.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnContClients.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContClients.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnContClients.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContClients.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnContClients.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -73,7 +81,11 @@
             this.btnContWorkers.BackColor = System.Drawing.Color.Transparent;
             this.btnContWorkers.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContWorkers.BackgroundImage")));
             this.btnContWorkers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnContWorkers.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnContWorkers.FlatAppearance.BorderSize = 0;
+            this.btnContWorkers.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnContWorkers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnContWorkers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnContWorkers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContWorkers.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnContWorkers.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -100,7 +112,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "DirectorStarterForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Стартова сторінка";
             this.ResumeLayout(false);
 

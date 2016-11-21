@@ -19,7 +19,7 @@ namespace Drugstore
 
         public void update()
         {
-            dataGridView1.DataSource = Clients.getAllClients().Tables[0];
+            dataGridView1.DataSource = Workers.getAllWorkers().Tables[0];
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -46,7 +46,7 @@ namespace Drugstore
             DialogResult = MessageBox.Show("Видалити запис?", "Видалення", MessageBoxButtons.YesNo);
             if (DialogResult == DialogResult.Yes)
             {
-                Clients.deleteId(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
+                Workers.deleteId(int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString()));
                 update();
             }
         }
@@ -54,11 +54,11 @@ namespace Drugstore
         private void btnEdit_Click(object sender, EventArgs e)
         {
             int index = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            WorkerEditForm editClientForm = new WorkerEditForm(index);
-            editClientForm.TopLevel = false;
-            editClientForm.MdiParent = (MainForm)Parent.Parent;
-            editClientForm.FormClosing += AddEditForm_FormClosing;
-            editClientForm.Show();
+            WorkerEditForm editWorkerForm = new WorkerEditForm(index);
+            editWorkerForm.TopLevel = false;
+            editWorkerForm.MdiParent = (MainForm)Parent.Parent;
+            editWorkerForm.FormClosing += AddEditForm_FormClosing;
+            editWorkerForm.Show();
         }
 
         private void WorkersForm_Load(object sender, EventArgs e)

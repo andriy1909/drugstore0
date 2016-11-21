@@ -38,7 +38,11 @@
             this.btnViewItem.BackColor = System.Drawing.Color.Transparent;
             this.btnViewItem.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnViewItem.BackgroundImage")));
             this.btnViewItem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnViewItem.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnViewItem.FlatAppearance.BorderSize = 0;
+            this.btnViewItem.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnViewItem.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnViewItem.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnViewItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnViewItem.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -55,7 +59,11 @@
             this.btnSell.BackColor = System.Drawing.Color.Transparent;
             this.btnSell.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSell.BackgroundImage")));
             this.btnSell.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSell.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSell.FlatAppearance.BorderSize = 0;
+            this.btnSell.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
+            this.btnSell.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnSell.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.btnSell.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSell.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnSell.ForeColor = System.Drawing.SystemColors.ControlLightLight;
