@@ -20,9 +20,9 @@ namespace Drugstore
         {
 
         }
-        public void setItem(int id, string name, string category, string text, int count, double price, double discont, string image, string position)
+        public void setItem( string name, string category, string text, int count, double price, double discont, string image, string position)
         {
-            this.id = id;
+            id = 0;
             this.name = name;
             this.category = category;
             this.text = text;
@@ -134,14 +134,14 @@ namespace Drugstore
             {
                 SqlCommand command = new SqlCommand(
                     "INSERT INTO Item VALUES(@valueName, @valueCategory, @valueText, @valueCount, " +
-                    "@valuePrice, @valueDiscont, @valueImage, @valuePosition)", connection);
+                    "@valuePrice, @valueDiscont, NULL, @valuePosition)", connection);
                 command.Parameters.AddWithValue("@valueName", getName());
                 command.Parameters.AddWithValue("@valueCategory", getCategory());
                 command.Parameters.AddWithValue("@valueText", getText());
                 command.Parameters.AddWithValue("@valueCount", getCount());
                 command.Parameters.AddWithValue("@valuePrice", getPrice());
                 command.Parameters.AddWithValue("@valueDiscont", getDiscont());
-                command.Parameters.AddWithValue("@valueImage", getImage());
+                //command.Parameters.AddWithValue("@valueImage", getImage());
                 command.Parameters.AddWithValue("@valuePosition", getPosition());
 
                 command.Connection.Open();
@@ -155,7 +155,7 @@ namespace Drugstore
             {
                 SqlCommand command = new SqlCommand(
                     "UPDATE Item SET name=@valueName, category=@valueCategory, text=@valueText, count=@valueCount, " +
-                    "price=@valuePrice, discont=@valueDiscont, image=@valueImage, position=@valuePosition " +
+                    "price=@valuePrice, discont=@valueDiscont, image=NULL, position=@valuePosition " +
                     "WHERE id=" + id.ToString(), connection);
                 command.Parameters.AddWithValue("@valueName", getName());
                 command.Parameters.AddWithValue("@valueCategory", getCategory());
@@ -163,7 +163,7 @@ namespace Drugstore
                 command.Parameters.AddWithValue("@valueCount", getCount());
                 command.Parameters.AddWithValue("@valuePrice", getPrice());
                 command.Parameters.AddWithValue("@valueDiscont", getDiscont());
-                command.Parameters.AddWithValue("@valueImage", getImage());
+                //command.Parameters.AddWithValue("@valueImage", getImage());
                 command.Parameters.AddWithValue("@valuePosition", getPosition());
 
                 command.Connection.Open();

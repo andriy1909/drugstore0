@@ -44,7 +44,7 @@
             this.numCount = new System.Windows.Forms.NumericUpDown();
             this.tbCategory = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbPosition = new System.Windows.Forms.TextBox();
             this.btnAddEdit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
@@ -189,14 +189,14 @@
             this.label7.TabIndex = 49;
             this.label7.Text = "Позиція товара";
             // 
-            // textBox1
+            // tbPosition
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(57, 240);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(69, 26);
-            this.textBox1.TabIndex = 50;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.tbPosition.Location = new System.Drawing.Point(57, 240);
+            this.tbPosition.Name = "tbPosition";
+            this.tbPosition.Size = new System.Drawing.Size(69, 26);
+            this.tbPosition.TabIndex = 50;
+            this.tbPosition.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnAddEdit
             // 
@@ -213,6 +213,7 @@
             this.btnAddEdit.TabIndex = 51;
             this.btnAddEdit.Text = "add/edit";
             this.btnAddEdit.UseVisualStyleBackColor = true;
+            this.btnAddEdit.Click += new System.EventHandler(this.btnAddEdit_Click);
             // 
             // ItemEditForm
             // 
@@ -221,7 +222,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(545, 317);
             this.Controls.Add(this.btnAddEdit);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbPosition);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.tbCategory);
             this.Controls.Add(this.numCount);
@@ -265,7 +266,7 @@
         private System.Windows.Forms.NumericUpDown numCount;
         private System.Windows.Forms.ComboBox tbCategory;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbPosition;
         private System.Windows.Forms.Button btnAddEdit;
     }
 }
