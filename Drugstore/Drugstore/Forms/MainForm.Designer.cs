@@ -43,15 +43,15 @@
             this.закритиВсіВікнаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.miContrDir = new System.Windows.Forms.ToolStripMenuItem();
-            this.miContrMan = new System.Windows.Forms.ToolStripMenuItem();
-            this.miContrCas = new System.Windows.Forms.ToolStripMenuItem();
             this.стартоваСторінкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.керуванняТоварамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.керуванняПрацівникамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.керуванняКлієнтамиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miContrMan = new System.Windows.Forms.ToolStripMenuItem();
+            this.стартоваСторінкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.керуванняТоварамиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.керуванняКлієнтамиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.стартоваСторінкаToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.miContrCas = new System.Windows.Forms.ToolStripMenuItem();
             this.стартоваСторінкаToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.переглядТоварівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.продажТоварівToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -178,6 +178,34 @@
             this.miContrDir.Text = "Керування";
             this.miContrDir.Visible = false;
             // 
+            // стартоваСторінкаToolStripMenuItem
+            // 
+            this.стартоваСторінкаToolStripMenuItem.Name = "стартоваСторінкаToolStripMenuItem";
+            this.стартоваСторінкаToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.стартоваСторінкаToolStripMenuItem.Text = "Стартова сторінка";
+            this.стартоваСторінкаToolStripMenuItem.Click += new System.EventHandler(this.директорToolStripMenuItem_Click);
+            // 
+            // керуванняТоварамиToolStripMenuItem
+            // 
+            this.керуванняТоварамиToolStripMenuItem.Name = "керуванняТоварамиToolStripMenuItem";
+            this.керуванняТоварамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.керуванняТоварамиToolStripMenuItem.Text = "Керування товарами";
+            this.керуванняТоварамиToolStripMenuItem.Click += new System.EventHandler(this.керуванняТоварамиToolStripMenuItem_Click);
+            // 
+            // керуванняПрацівникамиToolStripMenuItem
+            // 
+            this.керуванняПрацівникамиToolStripMenuItem.Name = "керуванняПрацівникамиToolStripMenuItem";
+            this.керуванняПрацівникамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.керуванняПрацівникамиToolStripMenuItem.Text = "Керування працівниками";
+            this.керуванняПрацівникамиToolStripMenuItem.Click += new System.EventHandler(this.керуванняПрацівникамиToolStripMenuItem_Click);
+            // 
+            // керуванняКлієнтамиToolStripMenuItem
+            // 
+            this.керуванняКлієнтамиToolStripMenuItem.Name = "керуванняКлієнтамиToolStripMenuItem";
+            this.керуванняКлієнтамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.керуванняКлієнтамиToolStripMenuItem.Text = "Керування клієнтами";
+            this.керуванняКлієнтамиToolStripMenuItem.Click += new System.EventHandler(this.керуванняКлієнтамиToolStripMenuItem_Click);
+            // 
             // miContrMan
             // 
             this.miContrMan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -188,6 +216,27 @@
             this.miContrMan.Size = new System.Drawing.Size(77, 20);
             this.miContrMan.Text = "Керування";
             this.miContrMan.Visible = false;
+            // 
+            // стартоваСторінкаToolStripMenuItem1
+            // 
+            this.стартоваСторінкаToolStripMenuItem1.Name = "стартоваСторінкаToolStripMenuItem1";
+            this.стартоваСторінкаToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.стартоваСторінкаToolStripMenuItem1.Text = "Стартова сторінка";
+            this.стартоваСторінкаToolStripMenuItem1.Click += new System.EventHandler(this.менеджерToolStripMenuItem_Click);
+            // 
+            // керуванняТоварамиToolStripMenuItem1
+            // 
+            this.керуванняТоварамиToolStripMenuItem1.Name = "керуванняТоварамиToolStripMenuItem1";
+            this.керуванняТоварамиToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.керуванняТоварамиToolStripMenuItem1.Text = "Керування товарами";
+            this.керуванняТоварамиToolStripMenuItem1.Click += new System.EventHandler(this.керуванняТоварамиToolStripMenuItem_Click);
+            // 
+            // керуванняКлієнтамиToolStripMenuItem1
+            // 
+            this.керуванняКлієнтамиToolStripMenuItem1.Name = "керуванняКлієнтамиToolStripMenuItem1";
+            this.керуванняКлієнтамиToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
+            this.керуванняКлієнтамиToolStripMenuItem1.Text = "Керування клієнтами";
+            this.керуванняКлієнтамиToolStripMenuItem1.Click += new System.EventHandler(this.керуванняКлієнтамиToolStripMenuItem_Click);
             // 
             // miContrCas
             // 
@@ -200,65 +249,26 @@
             this.miContrCas.Text = "Керування";
             this.miContrCas.Visible = false;
             // 
-            // стартоваСторінкаToolStripMenuItem
-            // 
-            this.стартоваСторінкаToolStripMenuItem.Name = "стартоваСторінкаToolStripMenuItem";
-            this.стартоваСторінкаToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.стартоваСторінкаToolStripMenuItem.Text = "Стартова сторінка";
-            // 
-            // керуванняТоварамиToolStripMenuItem
-            // 
-            this.керуванняТоварамиToolStripMenuItem.Name = "керуванняТоварамиToolStripMenuItem";
-            this.керуванняТоварамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.керуванняТоварамиToolStripMenuItem.Text = "Керування товарами";
-            // 
-            // керуванняПрацівникамиToolStripMenuItem
-            // 
-            this.керуванняПрацівникамиToolStripMenuItem.Name = "керуванняПрацівникамиToolStripMenuItem";
-            this.керуванняПрацівникамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.керуванняПрацівникамиToolStripMenuItem.Text = "Керування працівниками";
-            // 
-            // керуванняКлієнтамиToolStripMenuItem
-            // 
-            this.керуванняКлієнтамиToolStripMenuItem.Name = "керуванняКлієнтамиToolStripMenuItem";
-            this.керуванняКлієнтамиToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.керуванняКлієнтамиToolStripMenuItem.Text = "Керування клієнтами";
-            // 
-            // керуванняТоварамиToolStripMenuItem1
-            // 
-            this.керуванняТоварамиToolStripMenuItem1.Name = "керуванняТоварамиToolStripMenuItem1";
-            this.керуванняТоварамиToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.керуванняТоварамиToolStripMenuItem1.Text = "Керування товарами";
-            // 
-            // керуванняКлієнтамиToolStripMenuItem1
-            // 
-            this.керуванняКлієнтамиToolStripMenuItem1.Name = "керуванняКлієнтамиToolStripMenuItem1";
-            this.керуванняКлієнтамиToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.керуванняКлієнтамиToolStripMenuItem1.Text = "Керування клієнтами";
-            // 
-            // стартоваСторінкаToolStripMenuItem1
-            // 
-            this.стартоваСторінкаToolStripMenuItem1.Name = "стартоваСторінкаToolStripMenuItem1";
-            this.стартоваСторінкаToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
-            this.стартоваСторінкаToolStripMenuItem1.Text = "Стартова сторінка";
-            // 
             // стартоваСторінкаToolStripMenuItem2
             // 
             this.стартоваСторінкаToolStripMenuItem2.Name = "стартоваСторінкаToolStripMenuItem2";
             this.стартоваСторінкаToolStripMenuItem2.Size = new System.Drawing.Size(174, 22);
             this.стартоваСторінкаToolStripMenuItem2.Text = "Стартова сторінка";
+            this.стартоваСторінкаToolStripMenuItem2.Click += new System.EventHandler(this.аптекарToolStripMenuItem_Click);
             // 
             // переглядТоварівToolStripMenuItem
             // 
             this.переглядТоварівToolStripMenuItem.Name = "переглядТоварівToolStripMenuItem";
             this.переглядТоварівToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.переглядТоварівToolStripMenuItem.Text = "Перегляд товарів";
+            this.переглядТоварівToolStripMenuItem.Click += new System.EventHandler(this.керуванняТоварамиToolStripMenuItem_Click);
             // 
             // продажТоварівToolStripMenuItem
             // 
             this.продажТоварівToolStripMenuItem.Name = "продажТоварівToolStripMenuItem";
             this.продажТоварівToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
             this.продажТоварівToolStripMenuItem.Text = "Продаж товарів";
+            this.продажТоварівToolStripMenuItem.Click += new System.EventHandler(this.продажТоварівToolStripMenuItem_Click);
             // 
             // MainForm
             // 

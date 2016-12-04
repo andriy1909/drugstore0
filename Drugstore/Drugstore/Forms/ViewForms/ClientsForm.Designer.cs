@@ -37,6 +37,8 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(83, 21);
             this.comboBox1.TabIndex = 13;
+            this.comboBox1.Visible = false;
             // 
             // btnSort
             // 
@@ -64,6 +67,7 @@
             this.btnSort.TabIndex = 12;
             this.btnSort.Text = "Сортування";
             this.btnSort.UseVisualStyleBackColor = false;
+            this.btnSort.Visible = false;
             // 
             // btnFiltr
             // 
@@ -80,6 +84,7 @@
             this.btnFiltr.TabIndex = 11;
             this.btnFiltr.Text = "Фільтр";
             this.btnFiltr.UseVisualStyleBackColor = false;
+            this.btnFiltr.Visible = false;
             // 
             // btnEdit
             // 
@@ -164,12 +169,48 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatAppearance.BorderSize = 0;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button8.Location = new System.Drawing.Point(4, 218);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(83, 23);
+            this.button8.TabIndex = 15;
+            this.button8.Text = "Word";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(4, 247);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(83, 23);
+            this.button6.TabIndex = 16;
+            this.button6.Text = "Excel";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // ClientsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(785, 438);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnSort);
@@ -198,5 +239,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button6;
     }
 }

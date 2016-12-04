@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace Drugstore
@@ -29,7 +30,7 @@ namespace Drugstore
         {
             Items item = new Items();
             item.setItem(tbName.Text, tbCategory.Text, tbText.Text, (int)numCount.Value, double.Parse(tbPrice.Text),
-                double.Parse(tbDiscont.Text), "", tbPosition.Text);
+                double.Parse(tbDiscont.Text), pictureBox1.Image, tbPosition.Text);
             item.insertItem();
             MessageBox.Show("Додано!", "", MessageBoxButtons.OK);
             Close();
@@ -38,9 +39,9 @@ namespace Drugstore
         {
             Items item = new Items();
             item.setItem(tbName.Text, tbCategory.Text, tbText.Text, (int)numCount.Value, double.Parse(tbPrice.Text),
-                double.Parse(tbDiscont.Text), "", tbPosition.Text);
+                double.Parse(tbDiscont.Text), pictureBox1.Image, tbPosition.Text);
             item.updateItem(id);
-            MessageBox.Show("Додано!", "", MessageBoxButtons.OK);
+            MessageBox.Show("Змінено!", "", MessageBoxButtons.OK);
             Close();
         }
 
@@ -63,6 +64,16 @@ namespace Drugstore
             tbPrice.Text = item.getPrice().ToString();
             tbDiscont.Text = item.getDiscont().ToString();
             tbPosition.Text = item.getPosition();
+            pictureBox1.Image = item.getImage2();
+        }
+
+        private void btnOpenPicture_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            if(openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+            }
         }
     }
 }

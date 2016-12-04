@@ -48,6 +48,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(83, 21);
             this.comboBox1.TabIndex = 20;
+            this.comboBox1.Visible = false;
             // 
             // btnSort
             // 
@@ -65,6 +66,7 @@
             this.btnSort.TabIndex = 19;
             this.btnSort.Text = "Сортування";
             this.btnSort.UseVisualStyleBackColor = false;
+            this.btnSort.Visible = false;
             // 
             // btnFiltr
             // 
@@ -82,6 +84,7 @@
             this.btnFiltr.TabIndex = 18;
             this.btnFiltr.Text = "Фільтр";
             this.btnFiltr.UseVisualStyleBackColor = false;
+            this.btnFiltr.Visible = false;
             // 
             // btnEdit
             // 

@@ -1,5 +1,7 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.IO;
 
 namespace Drugstore
 {
@@ -12,7 +14,7 @@ namespace Drugstore
         int count;
         double price;
         double discont;
-        string image;
+        byte[] image;
         string position;
         string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
 
@@ -20,7 +22,7 @@ namespace Drugstore
         {
 
         }
-        public void setItem( string name, string category, string text, int count, double price, double discont, string image, string position)
+        public void setItem( string name, string category, string text, int count, double price, double discont, Image image, string position)
         {
             id = 0;
             this.name = name;
@@ -29,7 +31,7 @@ namespace Drugstore
             this.count = count;
             this.price = price;
             this.discont = discont;
-            this.image = image;
+            this.image = ImageToByte(image);
             this.position = position;
         }
 
@@ -61,9 +63,13 @@ namespace Drugstore
         {
             return discont;
         }
-        public string getImage()
+        public byte[] getImage()
         {
             return image;
+        }
+        public Image getImage2()
+        {
+            return byteToImage(image);
         }
         public string getPosition()
         {
@@ -98,7 +104,11 @@ namespace Drugstore
         {
             discont = value;
         }
-        public void setImage(string value)
+        public void setImage(Image value)
+        {
+            image = ImageToByte(value);
+        }
+        public void setImage2(byte[] value)
         {
             image = value;
         }
@@ -111,7 +121,7 @@ namespace Drugstore
         {
             SqlConnection bd = new SqlConnection(connectString);
             bd.Open();
-            SqlCommand command1 = new SqlCommand("SELECT * FROM Item WHERE id=" + id.ToString(), bd);
+            SqlCommand command1 = new SqlCommand("SELECT * FROM Items WHERE id=" + id.ToString(), bd);
             SqlDataReader dataReader1 = command1.ExecuteReader();
             while (dataReader1.Read())
             {
@@ -122,7 +132,7 @@ namespace Drugstore
                 setCount((int)dataReader1["count"]);
                 setPrice((double)dataReader1["price"]);
                 setDiscont((double)dataReader1["discont"]);
-                setImage(dataReader1["image"].ToString().Trim());
+                setImage2((byte[])dataReader1["image"]);
                 setPosition(dataReader1["position"].ToString().Trim());
             }
             bd.Close();
@@ -133,8 +143,8 @@ namespace Drugstore
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
-                    "INSERT INTO Item VALUES(@valueName, @valueCategory, @valueText, @valueCount, " +
-                    "@valuePrice, @valueDiscont, NULL, @valuePosition)", connection);
+                    "INSERT INTO Items VALUES(@valueName, @valueCategory, @valueText, @valueCount, " +
+                    "@valuePrice, @valueDiscont, @valueImage, @valuePosition)", connection);
                 command.Parameters.AddWithValue("@valueName", getName());
                 command.Parameters.AddWithValue("@valueCategory", getCategory());
                 command.Parameters.AddWithValue("@valueText", getText());
@@ -142,6 +152,7 @@ namespace Drugstore
                 command.Parameters.AddWithValue("@valuePrice", getPrice());
                 command.Parameters.AddWithValue("@valueDiscont", getDiscont());
                 //command.Parameters.AddWithValue("@valueImage", getImage());
+                command.Parameters.Add("@valueImage", SqlDbType.Image, image.Length).Value = image;
                 command.Parameters.AddWithValue("@valuePosition", getPosition());
 
                 command.Connection.Open();
@@ -154,8 +165,8 @@ namespace Drugstore
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
-                    "UPDATE Item SET name=@valueName, category=@valueCategory, text=@valueText, count=@valueCount, " +
-                    "price=@valuePrice, discont=@valueDiscont, image=NULL, position=@valuePosition " +
+                    "UPDATE Items SET name=@valueName, category=@valueCategory, text=@valueText, count=@valueCount, " +
+                    "price=@valuePrice, discont=@valueDiscont, image=@valueImage, position=@valuePosition " +
                     "WHERE id=" + id.ToString(), connection);
                 command.Parameters.AddWithValue("@valueName", getName());
                 command.Parameters.AddWithValue("@valueCategory", getCategory());
@@ -164,6 +175,7 @@ namespace Drugstore
                 command.Parameters.AddWithValue("@valuePrice", getPrice());
                 command.Parameters.AddWithValue("@valueDiscont", getDiscont());
                 //command.Parameters.AddWithValue("@valueImage", getImage());
+                command.Parameters.Add("@valueImage", SqlDbType.Image, image.Length).Value = image;
                 command.Parameters.AddWithValue("@valuePosition", getPosition());
 
                 command.Connection.Open();
@@ -177,7 +189,7 @@ namespace Drugstore
             using (SqlConnection connection = new SqlConnection(connectString))
             {
                 SqlCommand command = new SqlCommand(
-                    "DELETE FROM Item " +
+                    "DELETE FROM Items " +
                     "WHERE id=" + id.ToString(), connection);
 
                 command.Connection.Open();
@@ -191,10 +203,29 @@ namespace Drugstore
             string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
             SqlConnection bd = new SqlConnection(connectString);
             bd.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Item", bd);
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Items", bd);
             dataAdapter1.Fill(dataSet);
             bd.Close();
             return dataSet;
+        }
+
+        public byte[] ImageToByte(Image img)
+        {
+            ImageConverter converter = new ImageConverter();
+            return (byte[])converter.ConvertTo(img, typeof(byte[]));
+        }
+
+        private Image byteToImage(byte[] byteArrayIn)
+        {
+            Image newImage = null;
+            if (byteArrayIn != null)
+            {
+                using (MemoryStream stream = new MemoryStream(byteArrayIn))
+                {
+                    newImage = Image.FromStream(stream);
+                }
+            }
+            return newImage;
         }
     }
 }

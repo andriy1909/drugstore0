@@ -70,5 +70,19 @@ namespace Drugstore
         {
             update();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Clients client = new Clients();
+            client.printWord();
+            MessageBox.Show("Збережено");
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Clients client = new Clients();
+            client.printExcel();
+            MessageBox.Show("Збережено");
+        }
     }
 }

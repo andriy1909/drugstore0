@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ItemEditForm));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnOpenPicture = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbDiscont = new System.Windows.Forms.TextBox();
             this.tbPrice = new System.Windows.Forms.TextBox();
@@ -46,34 +44,11 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbPosition = new System.Windows.Forms.TextBox();
             this.btnAddEdit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.btnOpenPicture = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(24, 18);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(126, 127);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnOpenPicture
-            // 
-            this.btnOpenPicture.BackColor = System.Drawing.Color.Transparent;
-            this.btnOpenPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOpenPicture.BackgroundImage")));
-            this.btnOpenPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnOpenPicture.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpenPicture.FlatAppearance.BorderSize = 0;
-            this.btnOpenPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.btnOpenPicture.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnOpenPicture.Location = new System.Drawing.Point(47, 151);
-            this.btnOpenPicture.Name = "btnOpenPicture";
-            this.btnOpenPicture.Size = new System.Drawing.Size(82, 23);
-            this.btnOpenPicture.TabIndex = 1;
-            this.btnOpenPicture.Text = "відкрити";
-            this.btnOpenPicture.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -111,7 +86,7 @@
             // 
             this.tbName.Location = new System.Drawing.Point(279, 18);
             this.tbName.Name = "tbName";
-            this.tbName.Size = new System.Drawing.Size(133, 20);
+            this.tbName.Size = new System.Drawing.Size(247, 20);
             this.tbName.TabIndex = 30;
             // 
             // label5
@@ -167,6 +142,11 @@
             // numCount
             // 
             this.numCount.Location = new System.Drawing.Point(279, 187);
+            this.numCount.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.numCount.Name = "numCount";
             this.numCount.Size = new System.Drawing.Size(66, 20);
             this.numCount.TabIndex = 47;
@@ -176,7 +156,7 @@
             this.tbCategory.FormattingEnabled = true;
             this.tbCategory.Location = new System.Drawing.Point(279, 44);
             this.tbCategory.Name = "tbCategory";
-            this.tbCategory.Size = new System.Drawing.Size(133, 21);
+            this.tbCategory.Size = new System.Drawing.Size(247, 21);
             this.tbCategory.TabIndex = 48;
             // 
             // label7
@@ -191,6 +171,7 @@
             // 
             // tbPosition
             // 
+            this.tbPosition.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tbPosition.Location = new System.Drawing.Point(57, 240);
             this.tbPosition.Name = "tbPosition";
@@ -214,6 +195,35 @@
             this.btnAddEdit.Text = "add/edit";
             this.btnAddEdit.UseVisualStyleBackColor = true;
             this.btnAddEdit.Click += new System.EventHandler(this.btnAddEdit_Click);
+            // 
+            // btnOpenPicture
+            // 
+            this.btnOpenPicture.BackColor = System.Drawing.Color.Transparent;
+            this.btnOpenPicture.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnOpenPicture.BackgroundImage")));
+            this.btnOpenPicture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOpenPicture.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenPicture.FlatAppearance.BorderSize = 0;
+            this.btnOpenPicture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenPicture.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.btnOpenPicture.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnOpenPicture.Location = new System.Drawing.Point(47, 151);
+            this.btnOpenPicture.Name = "btnOpenPicture";
+            this.btnOpenPicture.Size = new System.Drawing.Size(82, 23);
+            this.btnOpenPicture.TabIndex = 1;
+            this.btnOpenPicture.Text = "відкрити";
+            this.btnOpenPicture.UseVisualStyleBackColor = false;
+            this.btnOpenPicture.Click += new System.EventHandler(this.btnOpenPicture_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = global::Drugstore.Properties.Resources.no_photo;
+            this.pictureBox1.Image = global::Drugstore.Properties.Resources.no_photo;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 18);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(126, 127);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // ItemEditForm
             // 
@@ -242,8 +252,8 @@
             this.Name = "ItemEditForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TovarAdd";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numCount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

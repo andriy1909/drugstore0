@@ -32,9 +32,17 @@ namespace Drugstore
         {
             return lastname;
         }
+        public string getSurnameNL()
+        {
+            return surname + " " + name[0] + "." + lastname[0] + ".";
+        }
         public string getPhone()
         {
             return phone;
+        }
+        public string getPhone38()
+        {
+            return "+38" + phone;
         }
         public string getEmail()
         {
@@ -51,7 +59,10 @@ namespace Drugstore
 
         public string ToUpLower(string str)
         {
-            return str.Remove(1).ToUpper() + str.Remove(0, 1).ToLower();
+            if (str.Length > 1)
+                return str.Remove(1).ToUpper() + str.Remove(0, 1).ToLower();
+            else
+                return str;
         }
 
         public void setId(int id)

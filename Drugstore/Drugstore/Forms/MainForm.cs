@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Drugstore
@@ -161,6 +154,43 @@ namespace Drugstore
             form.TopLevel = false;
             form.MdiParent = this;
             form.Show();
+        }
+
+        private void керуванняТоварамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemsForm form = new ItemsForm();
+            form.TopLevel = false;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void керуванняПрацівникамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WorkersForm form = new WorkersForm();
+            form.TopLevel = false;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void керуванняКлієнтамиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClientsForm form = new ClientsForm();
+            form.TopLevel = false;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void продажТоварівToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ItemSellForm form = new ItemSellForm();
+            form.TopLevel = false;
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

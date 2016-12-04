@@ -54,3 +54,4 @@ D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.exe
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.pdb
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.csprojResolveAssemblyReference.cache
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\bin\Debug\Drugstore.pdb
+D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.csproj.ResolveComReference.cache
