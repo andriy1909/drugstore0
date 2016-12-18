@@ -20,6 +20,7 @@ namespace Drugstore
         public void update()
         {
             dataGridView1.DataSource = Workers.getAllWorkers().Tables[0];
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -69,6 +70,15 @@ namespace Drugstore
         private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
         {
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            //int index = int.Parse(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            InfoForm infoForm = new InfoForm();
+            infoForm.TopLevel = false;
+            infoForm.MdiParent = (MainForm)Parent.Parent;
+            infoForm.Show();
         }
     }
 }

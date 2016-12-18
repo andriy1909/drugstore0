@@ -22,7 +22,7 @@ namespace Drugstore
 
         }
 
-        public void setWorker(string pasport, string surname, string name, string lastname, string phone, string email, int posada, DateTime dateBirth, int stage, DateTime datePriyom, bool gender)
+        public void setWorker(string pasport, string surname, string name, string lastname, string phone, string email, int posada, DateTime dateBirth, int stage, DateTime datePriyom, bool gender, string log, string pass)
         {
             this.pasport = pasport;
             setSurname(surname);
@@ -35,6 +35,8 @@ namespace Drugstore
             setStage(stage);
             setDatePriyom(datePriyom);
             setGender(gender);
+            setLogin(log);
+            setPassword(pass);
         }
 
         public string getPasport()

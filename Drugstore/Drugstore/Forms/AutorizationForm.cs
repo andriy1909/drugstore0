@@ -81,5 +81,11 @@ namespace Drugstore
         {
             tbPassword.UseSystemPasswordChar = !checkBox1.Checked;
         }
+
+        private void tbPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnCheck.PerformClick();
+        }
     }
 }

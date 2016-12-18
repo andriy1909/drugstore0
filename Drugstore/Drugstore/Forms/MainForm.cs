@@ -145,7 +145,10 @@ namespace Drugstore
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-
+            AutorizationForm autorization = new AutorizationForm();
+            autorization.TopLevel = false;
+            autorization.MdiParent = this;
+            autorization.Show();
         }
 
         private void директорToolStripMenuItem_Click(object sender, EventArgs e)

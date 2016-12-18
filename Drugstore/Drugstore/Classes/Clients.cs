@@ -153,7 +153,7 @@ namespace Drugstore
             string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
             SqlConnection bd = new SqlConnection(connectString);
             bd.Open();
-            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Clients", bd);
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Clients ORDER BY card ASC", bd);
             dataAdapter1.Fill(dataSet);
             bd.Close();
             return dataSet;
@@ -269,6 +269,33 @@ namespace Drugstore
         public void printReport()
         {
 
+        }
+
+        public static DataSet getClientsByFilter(string field, string value, string sort="", string sortBy="")
+        {
+            //if (sort != "")
+            //    sort = " ORDER BY " + sortBy + " " + sort;
+            DataSet dataSet = new DataSet();
+            string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Clients "+
+                "WHERE "+field+" LIKE '%" + value + "%' OR " + field + " LIKE '" + value + "%' OR " + field + " LIKE '%" + value+"'" +" ORDER BY " + sort + " " + sortBy, bd);
+            dataAdapter1.Fill(dataSet);
+            bd.Close();
+            return dataSet;
+        }
+
+        public static DataSet getAllClients(string sortField, string sort)
+        {
+            DataSet dataSet = new DataSet();
+            string connectString = @"Data Source=.\SQLEXPRESS; Initial Catalog = Drugstore; uid=sa; Integrated Security=SSPI;";
+            SqlConnection bd = new SqlConnection(connectString);
+            bd.Open();
+            SqlDataAdapter dataAdapter1 = new SqlDataAdapter("SELECT * FROM Clients ORDER BY "+sortField+" "+sort, bd);
+            dataAdapter1.Fill(dataSet);
+            bd.Close();
+            return dataSet;
         }
     }
 }

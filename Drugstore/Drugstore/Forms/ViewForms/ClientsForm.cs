@@ -24,7 +24,20 @@ namespace Drugstore
 
         public void update()
         {
-            dataGridView1.DataSource = Clients.getAllClients().Tables[0];
+            string sort, sortField, findField, findValue;
+            if (comboBox1.Text == "▼")
+                sort = "DESC";
+            else
+                sort = "ASC";
+            sortField = getNameField(comboBox3.Text);
+            findField = getNameField(comboBox2.Text);
+            findValue = textBox1.Text;
+
+            if (findValue == "")
+                dataGridView1.DataSource = Clients.getAllClients(sortField, sort).Tables[0];
+            else
+                dataGridView1.DataSource = Clients.getClientsByFilter(findField,findValue, sortField, sort).Tables[0];
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -83,6 +96,39 @@ namespace Drugstore
             Clients client = new Clients();
             client.printExcel();
             MessageBox.Show("Збережено");
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public string getNameField(string value)
+        {
+            switch (value)
+            {
+                case "Номер картки":
+                    return "card";
+                case "Прізвище":
+                    return "surname";
+                case "Ім'я":
+                    return "name";
+                case "По батькові":
+                    return "lastname";
+                case "Дата народження":
+                    return "dateBirth";
+                case "Дата реєстрації":
+                    return "dateRegistr";
+                case "Стать":
+                    return "gender";
+                default:
+                    return "";
+            }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            update();
         }
     }
 }

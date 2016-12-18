@@ -52,7 +52,7 @@ namespace Drugstore
             Workers worker = new Workers();
             worker.setWorker(tbPasport.Text, tbSurname.Text, tbName.Text, tbLastname.Text, 
                 maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, worker.getPosadaId(cbPosada.Text), 
-                dateBirth.Value, int.Parse(tbStaj.Text), datePriyom.Value, radioButtonMan.Checked);
+                dateBirth.Value, int.Parse(tbStaj.Text), datePriyom.Value, radioButtonMan.Checked, tbLogin.Text, tbPassword.Text);
             worker.insertWorker();
             MessageBox.Show("Додано!", "", MessageBoxButtons.OK);
             Close();
@@ -62,7 +62,7 @@ namespace Drugstore
             Workers worker = new Workers();
             worker.setWorker(tbPasport.Text, tbSurname.Text, tbName.Text, tbLastname.Text,
                 maskedPhobeToPhone(tbPhone.Text), tbEmail.Text, worker.getPosadaId(cbPosada.Text),
-                dateBirth.Value, int.Parse(tbStaj.Text), datePriyom.Value, radioButtonMan.Checked);
+                dateBirth.Value, int.Parse(tbStaj.Text), datePriyom.Value, radioButtonMan.Checked, tbLogin.Text, tbPassword.Text);
             worker.updateWorker(id);
             MessageBox.Show("Змінено!", "", MessageBoxButtons.OK);
             Close();
@@ -104,6 +104,8 @@ namespace Drugstore
                 radioButtonMan.Checked = true;
             else
                 radioButtonWoman.Checked = true;
+            tbLogin.Text = worker.getLogin();
+            tbPassword.Text = worker.getPassword();
         }
     }
 }

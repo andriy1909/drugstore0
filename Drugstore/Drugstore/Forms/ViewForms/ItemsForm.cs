@@ -25,6 +25,7 @@ namespace Drugstore
         public void update()
         {
             dataGridView1.DataSource = Items.getAllItems().Tables[0];
+            dataGridView1.Columns[0].Visible = false;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

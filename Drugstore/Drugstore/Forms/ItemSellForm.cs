@@ -46,5 +46,15 @@ namespace Drugstore
         {
             
         }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
+
+        private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            dataGridView2.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
     }
 }
