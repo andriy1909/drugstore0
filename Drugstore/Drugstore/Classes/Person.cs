@@ -42,7 +42,7 @@ namespace Drugstore
         }
         public string getPhone38()
         {
-            return "+38" + phone;
+            return "'+38" + phone;
         }
         public string getEmail()
         {

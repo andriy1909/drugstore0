@@ -229,7 +229,9 @@ namespace Drugstore
 
             worksheet = workbook.ActiveSheet;
             worksheet.Name = "ExportedFromDatGrid";
-            worksheet.Cells[1, 2] = "Звіт по персонажам.";
+            worksheet.Cells[1, 3] = "Звіт за клієнтами";
+
+            worksheet.Cells[1, 1] = DateTime.Now.Date;
 
             worksheet.Cells[2, 1] = "№пп";
 
@@ -238,6 +240,7 @@ namespace Drugstore
             worksheet.Cells[2, 3] = "Телефон";
 
             worksheet.Cells[2, 4] = "Картка";
+            worksheet.Columns.ColumnWidth=15;
 
             int i = 1;
             while (dataReader1.Read())

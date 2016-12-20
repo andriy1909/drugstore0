@@ -80,5 +80,11 @@ namespace Drugstore
             infoForm.MdiParent = (MainForm)Parent.Parent;
             infoForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportsForm form = new ReportsForm();
+            form.ShowDialog();
+        }
     }
 }

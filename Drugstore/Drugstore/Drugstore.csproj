@@ -54,8 +54,15 @@
     <ApplicationIcon>apteka.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -69,6 +76,30 @@
   <ItemGroup>
     <Compile Include="Classes\Checks.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSetItems.cs">
+      <DependentUpon>DataSetItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetItems.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetItems.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DrugstoreDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrugstoreDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DrugstoreDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DrugstoreDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AutorizationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +124,12 @@
     </Compile>
     <Compile Include="Forms\InfoForm.Designer.cs">
       <DependentUpon>InfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportsForm.Designer.cs">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ViewForms\ClientsForm.cs">
       <SubType>Form</SubType>
@@ -171,6 +208,10 @@
     <Compile Include="Forms\ViewForms\WorkersForm.Designer.cs">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AutorizationForm.resx">
       <DependentUpon>AutorizationForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InfoForm.resx">
       <DependentUpon>InfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportsForm.resx">
+      <DependentUpon>ReportsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewForms\ClientsForm.resx">
       <DependentUpon>ClientsForm.cs</DependentUpon>
@@ -221,6 +265,39 @@
     <EmbeddedResource Include="Forms\ViewForms\WorkersForm.resx">
       <DependentUpon>WorkersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetItems.xsc">
+      <DependentUpon>DataSetItems.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetItems.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetItems.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetItems.xss">
+      <DependentUpon>DataSetItems.xsd</DependentUpon>
+    </None>
+    <None Include="DrugstoreDataSet.xsc">
+      <DependentUpon>DrugstoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DrugstoreDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DrugstoreDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DrugstoreDataSet.xss">
+      <DependentUpon>DrugstoreDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="DrugstoreDataSet1.xsc">
+      <DependentUpon>DrugstoreDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DrugstoreDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DrugstoreDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DrugstoreDataSet1.xss">
+      <DependentUpon>DrugstoreDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -299,6 +376,9 @@
       <Isolated>False</Isolated>
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
