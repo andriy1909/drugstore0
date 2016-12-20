@@ -199,5 +199,23 @@ namespace Drugstore
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dataGridView1.Rows[0].Selected = true;
+                int i = itemsBindingSource.Find("id", textBox3.Text);
+                if (i >= 0)
+                    dataGridView1.Rows[i].Selected = true;
+                else
+                    MessageBox.Show("Не знайдено");
+            }
+        }
     }
 }

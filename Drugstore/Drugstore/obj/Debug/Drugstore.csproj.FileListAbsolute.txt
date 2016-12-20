@@ -76,3 +76,4 @@ D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\bin\Debug\CrystalDecision
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\bin\Debug\stdole.dll
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.ReportsForm.resources
 D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.csprojResolveAssemblyReference.cache
+D:\WorkSpace\C#_Vis_Prog\Drugstore\Drugstore\Drugstore\obj\Debug\Drugstore.ChangePriceForm.resources

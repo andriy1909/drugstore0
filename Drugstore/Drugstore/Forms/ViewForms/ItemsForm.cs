@@ -71,5 +71,11 @@ namespace Drugstore
         {
             update();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ChangePriceForm form = new ChangePriceForm();
+            form.ShowDialog();
+        }
     }
 }
